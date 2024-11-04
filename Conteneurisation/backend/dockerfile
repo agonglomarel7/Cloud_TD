@@ -1,0 +1,13 @@
+# Utiliser l'image de base Debian
+FROM debian:latest
+
+# Installer les paquets bash, htop, vim et net-tools (pour netstat)
+RUN apt-get update && \
+    apt-get install -y bash htop vim net-tools && \
+    apt-get clean
+
+# Définir la variable d'environnement OWNER avec votre prénom
+ENV OWNER="Marel"
+
+# Maintenir le conteneur actif avec la commande sleep
+CMD ["sleep", "3600"]
